@@ -78,12 +78,18 @@ KNOWLEDGE_BASE: list[tuple[list[str], str]] = [
     (["rate limit", "429"],
      "Rate limiting giới hạn số request mỗi client trong một cửa sổ thời gian, ví dụ 10 req/phút. "
      "Vượt giới hạn thì trả HTTP 429 Too Many Requests kèm header Retry-After."),
+    (["jwt"],
+     "API key thường là một bí mật được cấp cho client. JWT là token có thể mang thông tin về "
+     "danh tính và thời điểm hết hạn. Server kiểm tra chữ ký và thời hạn trước khi chấp nhận JWT."),
     (["stateless", "redis", "session"],
      "Stateless nghĩa là instance không giữ state trong memory; session được lưu ở Redis. "
      "Nhờ vậy có thể scale ngang nhiều instance sau load balancer."),
     (["load balancer", "nginx", "round-robin"],
      "Load balancer như Nginx phân phối request tới nhiều instance theo round-robin, "
      "và bỏ qua instance không healthy."),
+    (["hpa", "horizontal pod autoscaler"],
+     "Horizontal Pod Autoscaler (HPA) điều chỉnh số pod theo mục tiêu của các chỉ số đã cấu hình. "
+     "HPA có thể dùng CPU, memory hoặc custom metrics như số request mỗi giây."),
     (["p95", "p99", "percentile", "tail latency", "trung bình"],
      "Percentile p95 là ngưỡng mà 95% request nhanh hơn. Latency trung bình (average) che giấu "
      "tail latency, nên SLO thường đặt theo p95 hoặc p99."),
